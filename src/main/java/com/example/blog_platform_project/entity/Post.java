@@ -4,10 +4,12 @@ import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
@@ -20,17 +22,18 @@ public class Post {
 	Long id;
 	
 	String title;
-	String content;
+
+	@Lob
+	@Column(name = "content", columnDefinition = "TEXT") // or MEDIUMTEXT / LONGTEXT
+	private String content;
+
 	Date createdAt;
 	Date updatedAt;
 	
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
 	List<Comment> comments;
 
-	@Override
-	public String toString() {
-		return "Post [id=" + id + ", title=" + title + ", content=" + content + ", createdAt=" + createdAt
-				+ ", updatedAt=" + updatedAt + ", comments=" + comments + "]";
-	}
+
+	
 	
 }
