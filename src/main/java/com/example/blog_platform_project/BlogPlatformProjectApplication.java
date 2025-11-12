@@ -9,4 +9,12 @@ public class BlogPlatformProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BlogPlatformProjectApplication.class, args);
 	}
+	
+	/*
+		https://github.com/scbushan05/spring-boot-jpa-unit-testing
+		
+		GO THROUGH THE ABOVE GIT REPO FOR JUNIT TESTING ON API'S
+		
+		AND THE YOUTUBE VIDEO => https://www.youtube.com/watch?v=pHTr3IMuRh0
+	 */
 }
